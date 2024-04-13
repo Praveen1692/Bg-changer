@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chai Aur Code</title>
+    <style>
+      .dv span {
+        background: #212121;
+        color: #fff;
+        display: inline-flex;
+
+        align-items: center;
+        justify-content: center;
+
+        padding: 15px;
+        margin: 18px;
+
+        cursor: pointer;
+        width: 100px;
+        height: 80px;
+      }
+    </style>
+  </head>
+  <body style="background-color: azure">
+    <div class="dv">
+      <h1>Color Scheme Switcher</h1>
+      <span class="btn" id="grey"> Grey Theme</span>
+      <span class="btn" id="white"> White Theme</span>
+      <span class="btn" id="blue"> Blue Theme</span>
+      <span class="btn" id="yellow"> Yellow Theme</span>
+    </div>
+
+    <h2>
+      Try Clicking on one of the colors above
+      <span> to change the background color of this page..</span>
+    </h2>
+  </body>
+  <script>
+    const button = document.querySelectorAll(".btn");
+    const body = document.querySelector("body");
+    button.forEach((btn) => {
+      console.log(
+        btn.addEventListener("click", (e) => {
+          console.log(e.target);
+          console.log(btn.id);
+
+          body.style.backgroundColor = btn.id;
+        })
+      );
+    });
+  </script>
+</html>
